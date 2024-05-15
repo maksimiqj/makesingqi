@@ -1,0 +1,8 @@
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), c);        //更改文字颜色
+	return 0;
+}
+void printGame()
+{
+	int i, j;
+	gotoxy(5, 5);
