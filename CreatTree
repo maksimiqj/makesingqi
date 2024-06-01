@@ -1,0 +1,32 @@
+BTree * CreatTree(int a[],int n)
+{
+  BTree * root ,*p,*cu,*pa;
+  int i;
+    
+  root = (BTree *)malloc(sizeof(BTree));
+  root->data = a[0]; 
+  root->left = root->right =NULL;
+  
+  for(i=1;i<n;i++)
+  {
+    p = (BTree *)malloc(sizeof(BTree));
+    p->data = a[i];
+    p->left = p->right =NULL;
+    cu = root;
+  
+    while(cu)
+    {
+      pa = cu;
+      if(cu->data > p->data)
+        cu = cu->left;
+      else
+        cu = cu->right;
+    }
+    if(pa->data > p->data)
+      pa->left = p;
+    else
+      pa->right = p;
+  }  
+  
+  return root;
+}
