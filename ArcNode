@@ -1,0 +1,7 @@
+        if (this->arc[start - 1].firstarc == NULL) {
+            this->arc[start - 1].firstarc = temp;
+        }
+        else {
+            ArcNode * now = this->arc[start - 1].firstarc;
+            while(now->next) {
+                now = now->next;
